@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Odia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+
+
+
+:root {
+    /* color declaration */
+    --grey: #eee9e5;
+    --white: rgb(255, 255, 255);
+    --lightBlue: rgb(84, 137, 236);
+    --blue: rgb(4, 87, 165);
+    --green: rgb(44, 160, 40);
+    /* font size */
+    --heading: 1.4rem;
+    --subHeading: 1.2rem;
+    --medium: 1rem;
+    --small: 0.8rem;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Anek Odia', sans-serif;
+    font-size: var(--medium);
+    color: var(--white);
+
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+nav#navbar {
+
+    font-size: 1.2rem;
+
+    padding: 0px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    min-height: 12vh;
+    position: fixed;
+    /* Set the navbar to fixed position */
+    top: 0;
+    /* Position the navbar at the top of the page */
+    width: 100vw;
+    /* Full width */
+    z-index: 100;
+    /* nav bar appears on top of everything */
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.navbar-logo {
+    width: 10vh;
+
+    letter-spacing: 0.2rem;
+
+}
+
+
+
+.navbar-logo a img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 30rem;
+
+
+
+}
+
+.nav-links a {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    border-radius: 7px;
+
+}
+
+.nav-link {
+    min-width: 8vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.nav-link span {
+    color: var(--grey);
+}
+
+.nav-link i {
+    color: var(--grey);
+}
+
+.buttons {
+    width: 25vw;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.button button,
+.buttons button {
+    color: var(--grey);
+    border: 1px solid var(--white);
+    border-radius: 1rem;
+    background-color: transparent;
+    width: 8rem;
+    height: 3rem;
+    backdrop-filter: saturate(180%) blur(10px);
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    background-color: #4158D0;
+    background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    background-attachment: fixed;
+}
+
+.feather {
+    pointer-events: none;
+    position: absolute;
+    height: 95vh;
+    left: -22rem;
+    top: 5rem;
+
+}
+
+.intro {
+
+    position: absolute;
+    top: 15rem;
+    left: 6rem;
+
+}
+
+.intro h1 {
+    margin-bottom: 0.3rem;
+
+}
+
+
+.intro h1,
+.intro h1 * {
+    font-size: 4.7rem;
+    color: var(--white);
+}
+
+.underline {
+    position: relative;
+}
+
+.underline::after {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    width: 0%;
+    height: 0.5rem;
+    background-color: rgb(231, 227, 227);
+    display: block;
+    transition: all .5s ease-in-out;
+
+}
+
+.underline:hover::after {
+    content: '';
+    width: 85%;
+    height: 0.5rem;
+    background-color: white;
+    display: block;
+}
+
+.bg-img {
+
+    position: absolute;
+    top: 3rem;
+    right: 0rem;
+    height: 39rem;
+
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 6rem;
+    width: 45rem;
+    background-color: aliceblue;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.search-box button {
+
+    border-radius: .5rem;
+    color: var(--grey);
+    border: none;
+    height: 4rem;
+    width: 9rem;
+    background-color: var(--lightBlue);
+    transition: transform 0.5s ease-in-out;
+}
+
+.search-box button:hover {
+    transform: scale(1.1);
+
+}
+
+.search-box i {
+    color: #949291;
+}
+
+.search-box-job,
+.search-box-location {
+    display: flex;
+    width: 17rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+select {
+    text-align: center;
+    background-color: aliceblue;
+    width: 12rem;
+    border: none;
+    outline: none;
+    color: #949291;
+}
+
+select:hover {
+    color: rgb(61, 60, 60);
+}
+
+option {
+    color: #252524;
+}
+
+select:focus,
+option:focus {
+    border: none;
+    outline: none;
+}
+
+#registerModal {
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 13vh;
+    right: 7vw;
+    z-index: 1000;
+    transform: translateY(-500px);
+    transition: transform 0.5s ease-in-out;
+
+}
+
+#registerWindow {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 60vh;
+    width: 30vw;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+
+
+
+}
+
+.register-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.register-buttons button {
+    border: none;
+    font-size: 1.3rem;
+    margin: 1rem;
+    width: 14vw;
+    height: 8vh;
+    background-color: rgba(255, 255, 255, 0.27);
+    color: aliceblue;
+
+}
+
+.registerWindowMsg {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 3rem;
+}
+
+.close-btn {
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+}
+
+.featured-jobs {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+    background-color: #F6F4FC;
+    padding: 3rem;
+    padding-top: 6rem;
+}
+
+.featured-jobs * {
+    color: black;
+}
+
+.featured-jobs h2 {
+    font-size: 3rem;
+}
+
+.featured-jobs h4 {
+    color: grey;
+    margin-bottom: 2rem;
+}
+
+.jobs-intro-text {
+    text-align: center;
+}
+
+
+.about-us {
+    color: var(--white);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vh;
+    background-color: rgb(38, 38, 42);
+
+}
+
+.about-us * {
+
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.job-list-in-order {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+
+}
+
+.item {
+    padding: 2rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 0.3em;
+    height: 12rem;
+    width: 25rem;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.2rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.logo {
+    grid-row-start: 2;
+    grid-column-start: 1;
+}
+
+.logo img {
+    height: 4rem;
+    border-radius: 100%;
+
+}
+
+.jobname {
+    font-weight: bold;
+    font-size: 1.1rem;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.companyname {
+    grid-column-start: 2;
+    color: gray;
+}
+
+.location {
+    color: gray;
+
+}
+
+.companyname i,
+.location i {
+    margin-right: 0.6rem;
+    color: gray;
+}
+
+.job-label {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.label-success {
+    display: flex;
+    justify-content: center;
+
+    border-radius: 1rem;
+    background-color: #5CB85C;
+    color: white;
+    width: 8vw;
+}
+
+.label-danger {
+    display: flex;
+    justify-content: center;
+    border-radius: 1rem;
+    background-color: #D9534F;
+    color: white;
+    width: 8vw;
+}
+
+.label-warning {
+    display: flex;
+    justify-content: center;
+    border-radius: 1rem;
+    background-color: #F0AD4E;
+    color: white;
+    width: 8vw;
+}
+
+/* job cards in job-list css */
+.course {
+    background-color: #EDF2F2;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    max-width: 100%;
+    margin: 20px;
+    overflow: hidden;
+    width: 70vw;
+    height: 30vh;
+}
+
+.course h6,
+.course-preview h6 {
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.course h2 {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    margin: 10px 0;
+}
+
+.course-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #2A265F;
+    color: #fff;
+    padding: 30px;
+    width: 25rem;
+}
+
+.course-preview a {
+    color: #fff;
+    display: inline-block;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-top: 30px;
+    text-decoration: none;
+
+}
+
+.course-info {
+    padding: 30px;
+    position: relative;
+    width: 100%;
+}
+
+.course-info h2 {
+    font-size: 1.5rem;
+    color: black;
+}
+
+.course-info h6 {
+    font-size: 1rem;
+    color: #2A265F;
+}
+
+.progress-container {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    text-align: right;
+    width: 150px;
+}
+
+.progress {
+    background-color: #ddd;
+    border-radius: 3px;
+    height: 5px;
+    width: 100%;
+}
+
+.progress::after {
+    border-radius: 3px;
+    background-color: #2A265F;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 66%;
+}
+
+.progress-text {
+    font-size: 1rem;
+    opacity: 0.6;
+    letter-spacing: 1px;
+}
+
+.btn {
+    background-color: #2A265F;
+    border: 0;
+    border-radius: 50px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 25px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    letter-spacing: 1px;
+}
+
+.find-jobs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.all-jobs-list {
+    display: flex;
+    flex-direction: column;
+
+
+}
